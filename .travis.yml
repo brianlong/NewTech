@@ -6,7 +6,6 @@ services: postgre
 script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate test
 before_script:
-  - gem install bundler --pre
   - cp config/database.travis.yml config/database.yml
   - rake db:drop
   - rake db:create
