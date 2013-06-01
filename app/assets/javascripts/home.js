@@ -1,4 +1,4 @@
-var loadGmap = (function() {
+(function() {
   var GMap;
 
   var currentMap;
@@ -86,6 +86,7 @@ var loadGmap = (function() {
       });
       drawCountyCircles(container);
       loadRecentBox(8);
+      refreshFilterMenus(container)
     }
 
     GMap.init = function(container) {
@@ -184,6 +185,7 @@ var loadGmap = (function() {
         $('#category-filter-menu').html(categoryLinks);
         setCategoryMenuListener();
     });
+
     $.getJSON($(container).data("tags_url"), srcParams, function(data) {
         var tagLinks = "";
         $.each(data, function(i, tag) {
@@ -195,6 +197,7 @@ var loadGmap = (function() {
         $('#tags-filter-menu').html(tagLinks);
         setTagMenuListener();
     });
+
   }
 
   function refreshTags(container) {
@@ -626,4 +629,4 @@ var loadGmap = (function() {
       });
     });
 
-});
+}).call(this);
