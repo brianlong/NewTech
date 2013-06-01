@@ -3,9 +3,11 @@ language: ruby
 rvm:
   - 1.9.3
 services: postgre
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
 before_script:
   - gem install bundler --pre
-  - cp config/database.yml-example config/database.yml
+  - cp config/database.travis.yml config/database.yml
   - rake db:drop
   - rake db:create
   - rake system:bootstrap

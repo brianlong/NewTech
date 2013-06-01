@@ -15,6 +15,7 @@
 .powenv
 
 # Ignore IDE configurations
+database.yml
 .idea
 atlassian-ide-plugin.xml
 *.iml
