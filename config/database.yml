@@ -1,0 +1,13 @@
+defaults: &defaults
+  adapter: postgresql
+  database: myapp_test
+  username: postgres
+
+development:
+   <<: *defaults
+   database: newtech_development
+
+test:
+   <<: *defaults
+   database: newtech_test
+
